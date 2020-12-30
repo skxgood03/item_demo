@@ -1,0 +1,60 @@
+{% extends 'post/templates/../../templates/base.html' %}
+    {% block title %}首页{% endblock %}
+{% block headerjs %}
+      <style>
+
+        form {
+          position: relative;
+          width: 150px;
+          margin: 0 auto;
+        }
+        .d1{
+            float: right;
+            line-height: 67px;
+
+        }
+        .d1 input {
+          width: 100px;
+          height: 30px;
+          border: 2px solid darkred;
+          border-radius: 5px;
+          outline: none;
+          background: white;
+          color: #1e242a;
+        }
+    </style>
+{% endblock %}
+
+
+{% block left %}
+    <div id="main">
+
+            {% for post in postlist %}
+
+            <article class="article article-type-post">
+                <div class="article-inner">
+                    <header class="article-header">
+                        <a href="#" class="archive-article-date">
+                            <time> {{ post.2|date:'Y-m' }}</time>
+
+                        </a>
+                        <h1 itemprop="name">
+                            <a class="archive-article-title" href="/post/{{ post.0 }}" target="_blank">{{ post.1 }}</a>
+                        </h1>
+                    </header>
+
+                </div>
+
+            </article>
+            {% endfor %}
+
+
+
+    </div>
+
+
+{% endblock %}
+
+
+
+
